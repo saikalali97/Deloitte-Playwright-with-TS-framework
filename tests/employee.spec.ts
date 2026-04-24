@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/base.js';
 import { LoginPage } from '../pages/LoginPage.js';
 import { MainPage } from '../pages/MainPage.js';
-import { JsonUtils } from '../utils/json-utils.js'
+import { JsonUtils } from '../utils/json-utils.js';
 
 test.describe("Employee management tests", () => {
 
