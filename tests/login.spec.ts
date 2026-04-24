@@ -49,12 +49,12 @@ for (const{username,password,expected_error} of JsonUtils.getJson('validLoginDat
     await expect(page.locator("xpath=//h6[text()='Dashboard']")).toHaveText('Dashboard')
   })};
 
-    for (const { username, password, expected_error } of ExcelUtils.getdatafromexcel('invalidLoginData')) {
+    for (const { username, password, expected_value } of ExcelUtils.getdatafromexcel('invalidLoginData')) {
     test(`verify invalid login from excel: ${username} and ${password}`, async ({ page }) => {
       await page.locator("xpath=//input[@name='username']").fill(username)
       await page.locator("xpath=//input[@name='password']").fill(password)
       await page.locator("xpath=//button[contains(normalize-space(),'Login')]").click()
-      await expect(page.locator("xpath=//p[text()='Invalid credentials']")).toHaveText(expected_error)
+      await expect(page.locator("xpath=//p[text()='Invalid credentials']")).toHaveText(expected_value)
     });
   }
 })
